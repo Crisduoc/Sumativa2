@@ -1,0 +1,20 @@
+{% extends 'MiApp/base_generic.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h2>Bienvenido a MiApp</h2>
+
+{% if user.is_superuser %}
+    <p>Eres un superusuario. Tienes acceso a funcionalidades avanzadas.</p>
+{% else %}
+    <p>Eres un usuario normal. Disfruta de la aplicación.</p>
+{% endif %}
+
+<p>Haz clic en el botón de abajo para ir a la lista de productos.</p>
+
+<a href="{% url 'listar_productos' %}">
+    <button>Ver mis productos</button>
+</a>
+
+{% endblock %}
